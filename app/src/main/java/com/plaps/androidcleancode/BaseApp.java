@@ -20,7 +20,6 @@ public class BaseApp  extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         File cacheFile = new File(getCacheDir(), "responses");
         deps = DaggerDeps.builder().networkModule(new NetworkModule(cacheFile)).build();
-
     }
 
     public Deps getDeps() {
