@@ -1,7 +1,7 @@
 package com.plaps.androidcleancode;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.plaps.androidcleancode.deps.DaggerDeps;
 import com.plaps.androidcleancode.deps.Deps;
