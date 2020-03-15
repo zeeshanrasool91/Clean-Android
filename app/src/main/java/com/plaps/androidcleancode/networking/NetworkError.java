@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 
 import retrofit2.HttpException;
@@ -74,7 +75,7 @@ public class NetworkError extends Throwable {
 
         NetworkError that = (NetworkError) o;
 
-        return error != null ? error.equals(that.error) : that.error == null;
+        return Objects.equals(error, that.error);
 
     }
 

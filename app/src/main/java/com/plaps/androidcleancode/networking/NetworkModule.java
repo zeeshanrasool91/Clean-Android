@@ -4,6 +4,7 @@ import com.plaps.androidcleancode.BuildConfig;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Locale;
 
 import javax.inject.Singleton;
 
@@ -49,7 +50,7 @@ public class NetworkModule {
                         Request request = original.newBuilder()
                                 .header("Content-Type", "application/json")
                                 .removeHeader("Pragma")
-                                .header("Cache-Control", String.format("max-age=%d", BuildConfig.CACHETIME))
+                                .header("Cache-Control", String.format(Locale.ENGLISH,"max-age=%d", BuildConfig.CACHETIME))
                                 .build();
 
                         okhttp3.Response response = chain.proceed(request);

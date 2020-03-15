@@ -25,12 +25,7 @@ public class Service {
         return networkService.getCityList()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .onErrorResumeNext(new Func1<Throwable, Observable<? extends CityListResponse>>() {
-                    @Override
-                    public Observable<? extends CityListResponse> call(Throwable throwable) {
-                        return Observable.error(throwable);
-                    }
-                })
+                .onErrorResumeNext(Observable::error)
                 .subscribe(new Subscriber<CityListResponse>() {
                     @Override
                     public void onCompleted() {
